@@ -127,14 +127,36 @@ const counterObserver = new IntersectionObserver(
 
 counterItems.forEach((item) => counterObserver.observe(item));
 
-// Testimonials slider
-let testimonialIndex = 0;
-setInterval(() => {
-  testimonialCards.forEach((card, index) => {
-    card.classList.toggle('active', index === testimonialIndex);
+// Swiper initialization for Google Reviews Slider
+if (typeof Swiper !== 'undefined' && document.querySelector('.reviews-slider')) {
+  new Swiper('.reviews-slider', {
+    slidesPerView: 1,
+    spaceBetween: 24,
+    loop: true,
+    autoplay: {
+      delay: 4500,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 24,
+      },
+      1024: {
+        slidesPerView: 3,
+        spaceBetween: 30,
+      }
+    }
   });
-  testimonialIndex = (testimonialIndex + 1) % testimonialCards.length;
-}, 4500);
+}
 
 // Gallery lightbox
 galleryItems.forEach((image) => {
@@ -251,4 +273,22 @@ window.addEventListener('mousedown', () => {
 window.addEventListener('mouseup', () => {
   cursorRing.style.width = '36px';
   cursorRing.style.height = '36px';
+});
+
+// FAQ Accordion Interactivity
+document.querySelectorAll('.accordion-header').forEach((headerBtn) => {
+  headerBtn.addEventListener('click', () => {
+    const currentItem = headerBtn.closest('.accordion-item');
+    const isActive = currentItem.classList.contains('active');
+
+    // Close all other accordion items for clean single accordion view
+    document.querySelectorAll('.accordion-item').forEach((item) => {
+      item.classList.remove('active');
+    });
+
+    // Toggle current item if it was not already active
+    if (!isActive) {
+      currentItem.classList.add('active');
+    }
+  });
 });
