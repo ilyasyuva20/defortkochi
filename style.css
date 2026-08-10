@@ -1,14 +1,14 @@
 :root {
-  --navy-900: #050E17;
-  --navy-800: #09192B;
-  --navy-700: #0F2742;
-  --cream: #152B44;
+  --navy-900: #050505;
+  --navy-800: #0A0A0A;
+  --navy-700: #121212;
+  --cream: #181818;
   --white: #FFFFFF;
   --gold: #D4AF37;
   --gold-hover: #E5C158;
   --text: #E2E8F0;
   --text-muted: #94A3B8;
-  --shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  --shadow: 0 20px 50px rgba(0, 0, 0, 0.85);
   --radius: 24px;
 }
 
@@ -20,12 +20,14 @@
 
 html {
   scroll-behavior: smooth;
+  background-color: #000000;
 }
 
 body {
   font-family: 'Poppins', sans-serif;
   color: var(--text);
-  background: radial-gradient(circle at 50% 0%, #0c2035 0%, #050e17 60%, #030810 100%);
+  background: radial-gradient(circle at 50% 0%, #121212 0%, #050505 60%, #000000 100%);
+  background-color: #000000;
   background-attachment: fixed;
   overflow-x: hidden;
   cursor: none;
@@ -56,10 +58,10 @@ a {
 }
 
 .section-alt {
-  background: rgba(9, 23, 38, 0.65);
+  background: rgba(10, 10, 10, 0.85);
   backdrop-filter: blur(22px);
-  border-top: 1px solid rgba(212, 175, 55, 0.12);
-  border-bottom: 1px solid rgba(212, 175, 55, 0.12);
+  border-top: 1px solid rgba(212, 175, 55, 0.15);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.15);
 }
 
 .section-label {
@@ -133,7 +135,7 @@ a {
   z-index: 9999;
   display: grid;
   place-items: center;
-  background: linear-gradient(135deg, var(--navy-900), var(--navy-700));
+  background: linear-gradient(135deg, #000000, #0c0c0c);
   color: var(--white);
   transition: opacity 0.7s ease, visibility 0.7s ease;
 }
@@ -200,9 +202,9 @@ a {
   z-index: 1100;
   width: 48px;
   height: 48px;
-  border: 0;
+  border: 1px solid rgba(212, 175, 55, 0.3);
   border-radius: 50%;
-  background: var(--navy-900);
+  background: #0d0d0d;
   color: var(--white);
   box-shadow: var(--shadow);
   opacity: 0;
@@ -228,10 +230,10 @@ a {
 }
 
 .site-header.scrolled {
-  background: rgba(5, 14, 23, 0.92);
+  background: rgba(0, 0, 0, 0.94);
   backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(212, 175, 55, 0.15);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.18);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.8);
   padding: 0.8rem 0;
 }
 
@@ -333,7 +335,7 @@ a {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(120deg, rgba(11, 45, 77, 0.92), rgba(16, 34, 59, 0.55));
+  background: linear-gradient(120deg, rgba(0, 0, 0, 0.94), rgba(12, 12, 12, 0.78), rgba(0, 0, 0, 0.9));
   z-index: -1;
 }
 
@@ -396,8 +398,8 @@ a {
 .hero-card {
   padding: 1.5rem;
   border-radius: var(--radius);
-  background: rgba(255,255,255,0.14);
-  border: 1px solid rgba(255,255,255,0.24);
+  background: rgba(18, 18, 18, 0.65);
+  border: 1px solid rgba(212, 175, 55, 0.25);
   backdrop-filter: blur(24px);
   box-shadow: var(--shadow);
 }
@@ -486,9 +488,9 @@ a {
 .counter-card {
   padding: 1rem;
   border-radius: 18px;
-  background: rgba(13, 30, 50, 0.85);
+  background: rgba(14, 14, 14, 0.85);
   border: 1px solid rgba(212, 175, 55, 0.25);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
   text-align: center;
 }
 
@@ -506,7 +508,7 @@ a {
 .about-card {
   overflow: hidden;
   border-radius: var(--radius);
-  background: rgba(13, 30, 50, 0.8);
+  background: rgba(14, 14, 14, 0.85);
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: var(--shadow);
 }
@@ -567,7 +569,7 @@ a {
 }
 
 .exp-card {
-  background: rgba(12, 27, 44, 0.75);
+  background: rgba(14, 14, 14, 0.8);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius);
   overflow: hidden;
@@ -581,8 +583,8 @@ a {
 .exp-card:hover {
   transform: translateY(-8px);
   border-color: rgba(212, 175, 55, 0.4);
-  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.6);
-  background: rgba(17, 36, 58, 0.85);
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.8);
+  background: rgba(24, 24, 24, 0.9);
 }
 
 .exp-img-wrapper {
@@ -634,7 +636,7 @@ a {
 .social-card,
 .map-card,
 .booking-card {
-  background: rgba(12, 27, 44, 0.75);
+  background: rgba(14, 14, 14, 0.8);
   border: 1px solid rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(18px);
   box-shadow: var(--shadow);
@@ -652,8 +654,8 @@ a {
 .feature-card:hover {
   transform: translateY(-8px);
   border-color: rgba(212, 175, 55, 0.4);
-  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.6);
-  background: rgba(17, 36, 58, 0.85);
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.8);
+  background: rgba(24, 24, 24, 0.9);
 }
 
 .package-top {
@@ -786,7 +788,7 @@ a {
   width: 38px;
   height: 38px;
   border-radius: 50%;
-  background: #061526;
+  background: #080808;
   border: 2px solid var(--gold);
   color: var(--gold);
   font-weight: 700;
@@ -807,7 +809,7 @@ a {
 }
 
 .timeline-content {
-  background: rgba(12, 27, 44, 0.85);
+  background: rgba(14, 14, 14, 0.85);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius);
   padding: 1.6rem;
@@ -819,8 +821,8 @@ a {
 .timeline-content:hover {
   transform: translateY(-5px);
   border-color: rgba(212, 175, 55, 0.4);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
-  background: rgba(17, 36, 58, 0.9);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+  background: rgba(24, 24, 24, 0.92);
 }
 
 .timeline-date {
@@ -880,9 +882,9 @@ a {
   position: relative;
   overflow: hidden;
   border-radius: 18px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
   border: 1px solid rgba(255, 255, 255, 0.12);
-  background: rgba(12, 27, 44, 0.7);
+  background: rgba(14, 14, 14, 0.75);
   transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.4s ease, box-shadow 0.4s ease;
 }
 
@@ -968,7 +970,7 @@ a {
 }
 
 .review-card {
-  background: rgba(12, 27, 44, 0.85);
+  background: rgba(14, 14, 14, 0.85);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius);
   padding: 1.8rem;
@@ -985,8 +987,8 @@ a {
 .review-card:hover {
   transform: translateY(-6px);
   border-color: rgba(212, 175, 55, 0.4);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
-  background: rgba(17, 36, 58, 0.9);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+  background: rgba(24, 24, 24, 0.92);
 }
 
 .review-header {
@@ -1070,7 +1072,7 @@ a {
   color: var(--gold);
   width: 44px;
   height: 44px;
-  background: rgba(9, 25, 43, 0.85);
+  background: rgba(12, 12, 12, 0.9);
   border: 1px solid rgba(212, 175, 55, 0.3);
   border-radius: 50%;
   backdrop-filter: blur(10px);
@@ -1121,13 +1123,13 @@ a {
 .booking-card {
   padding: 3.8rem 3.2rem;
   border-radius: 28px;
-  background: linear-gradient(to right, rgba(6, 18, 32, 0.96) 0%, rgba(6, 18, 32, 0.85) 45%, rgba(6, 18, 32, 0.25) 100%),
+  background: linear-gradient(to right, rgba(4, 4, 4, 0.96) 0%, rgba(10, 10, 10, 0.88) 45%, rgba(10, 10, 10, 0.35) 100%),
               url('assets/images/chinese_fishing_nets.png') no-repeat center right / cover;
   border: 1px solid rgba(212, 175, 55, 0.35);
   color: var(--white);
   position: relative;
   overflow: hidden;
-  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.8);
   backdrop-filter: blur(20px);
 }
 
@@ -1244,11 +1246,11 @@ a {
 
 /* Compact Map Card Widget */
 .booking-map-widget {
-  background: rgba(9, 23, 39, 0.9);
+  background: rgba(12, 12, 12, 0.92);
   border: 1px solid rgba(212, 175, 55, 0.25);
   border-radius: 20px;
   padding: 1.2rem;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
   display: flex;
   flex-direction: column;
   gap: 0.9rem;
@@ -1375,7 +1377,7 @@ a {
 }
 
 .partner-card {
-  background: rgba(12, 27, 44, 0.85);
+  background: rgba(14, 14, 14, 0.85);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius);
   padding: 2rem 1.2rem;
@@ -1393,8 +1395,8 @@ a {
 .partner-card:hover {
   transform: translateY(-6px);
   border-color: rgba(212, 175, 55, 0.4);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6);
-  background: rgba(17, 36, 58, 0.95);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.8);
+  background: rgba(24, 24, 24, 0.95);
 }
 
 .partner-icon-wrapper {
@@ -1542,7 +1544,7 @@ a {
 /* Site Footer */
 .site-footer {
   padding: 4rem 0 2rem;
-  background: linear-gradient(180deg, #061424 0%, #030912 100%);
+  background: linear-gradient(180deg, #0a0a0a 0%, #000000 100%);
   border-top: 1px solid rgba(212, 175, 55, 0.2);
 }
 
@@ -1595,7 +1597,7 @@ a {
 .modal {
   position: fixed;
   inset: 0;
-  background: rgba(3, 10, 20, 0.88);
+  background: rgba(0, 0, 0, 0.94);
   display: grid;
   place-items: center;
   padding: 1rem;
@@ -1718,7 +1720,7 @@ a {
     gap: 5px;
     width: 44px;
     height: 44px;
-    background: rgba(12, 27, 44, 0.9);
+    background: rgba(14, 14, 14, 0.92);
     border: 1px solid rgba(212, 175, 55, 0.35);
     border-radius: 12px;
     cursor: pointer;
@@ -1743,7 +1745,7 @@ a {
     max-width: 300px;
     flex-direction: column;
     align-items: stretch;
-    background: rgba(8, 21, 36, 0.98);
+    background: rgba(8, 8, 8, 0.98);
     border: 1px solid rgba(212, 175, 55, 0.3);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8);
     padding: 1.2rem;
@@ -1887,7 +1889,7 @@ a {
 }
 
 .accordion-item {
-  background: rgba(12, 27, 44, 0.85);
+  background: rgba(14, 14, 14, 0.85);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius);
   overflow: hidden;
@@ -1899,8 +1901,8 @@ a {
 .accordion-item:hover,
 .accordion-item.active {
   border-color: rgba(212, 175, 55, 0.4);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-  background: rgba(17, 36, 58, 0.9);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+  background: rgba(24, 24, 24, 0.92);
 }
 
 .accordion-header {
@@ -1967,11 +1969,11 @@ a {
 }
 
 .contact-info-card {
-  background: rgba(12, 27, 44, 0.85);
+  background: rgba(14, 14, 14, 0.85);
   border: 1px solid rgba(212, 175, 55, 0.25);
   border-radius: 24px;
   padding: 2.2rem;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(18px);
   display: flex;
   flex-direction: column;
@@ -2118,11 +2120,11 @@ a {
 
 /* Integrated Location Map Card in Contact Section */
 .contact-map-card {
-  background: rgba(12, 27, 44, 0.85);
+  background: rgba(14, 14, 14, 0.85);
   border: 1px solid rgba(212, 175, 55, 0.25);
   border-radius: 24px;
   padding: 2.2rem;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(18px);
   display: flex;
   flex-direction: column;
@@ -2180,11 +2182,11 @@ a {
 }
 
 .core-aim-card {
-  background: linear-gradient(135deg, rgba(12, 27, 44, 0.95), rgba(7, 18, 30, 0.98));
+  background: linear-gradient(135deg, rgba(16, 16, 16, 0.96), rgba(4, 4, 4, 0.98));
   border: 1px solid rgba(212, 175, 55, 0.3);
   border-radius: 28px;
   padding: 2.8rem 2.2rem;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(24px);
   position: relative;
   overflow: hidden;
@@ -2254,7 +2256,7 @@ a {
 }
 
 .aim-pillar-card {
-  background: rgba(18, 38, 62, 0.6);
+  background: rgba(22, 22, 22, 0.65);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 20px;
   padding: 1.35rem 1.1rem;
@@ -2267,9 +2269,9 @@ a {
 
 .aim-pillar-card:hover {
   transform: translateY(-6px);
-  background: rgba(22, 48, 78, 0.85);
+  background: rgba(30, 30, 30, 0.88);
   border-color: rgba(212, 175, 55, 0.5);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), 0 0 20px rgba(212, 175, 55, 0.15);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 20px rgba(212, 175, 55, 0.15);
 }
 
 .pillar-icon-wrap {
@@ -2302,7 +2304,7 @@ a {
 
 /* Activities Highlights Banner */
 .aim-activities-banner {
-  background: rgba(5, 14, 23, 0.7);
+  background: rgba(8, 8, 8, 0.75);
   border: 1px solid rgba(212, 175, 55, 0.25);
   border-radius: 20px;
   padding: 1.2rem 1.6rem;
