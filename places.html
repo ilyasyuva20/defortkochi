@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Explore top tourist attractions, historic landmarks, and rich experiences in Fort Kochi, Kerala with DE FORT KOCHI heritage tours." />
+  <meta name="theme-color" content="#000000" />
+  <title>Must Visit Places & Experiences | DE FORT KOCHI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- Loading screen -->
+  <div class="loading-screen" aria-hidden="true">
+    <div class="loading-card">
+      <div class="loading-ring"></div>
+      <p>Preparing your journey</p>
+    </div>
+  </div>
+
+  <!-- Scroll progress -->
+  <div class="progress-bar" aria-hidden="true"></div>
+
+  <!-- Custom cursor -->
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
+  <!-- Back to top -->
+  <button class="back-to-top" aria-label="Back to top">↑</button>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container nav-shell">
+      <a href="index.html" class="brand" aria-label="DE FORT KOCHI home">
+        <img src="assets/logo.png" alt="DE FORT KOCHI logo" />
+        <span>DE FORT KOCHI</span>
+      </a>
+
+      <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="places.html" class="active">Places</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="contact.html">Contact</a>
+        <a href="https://wa.me/917558807741" class="btn btn-small" target="_blank" rel="noreferrer">Book Now</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Subpage Header Banner -->
+  <section class="page-header-banner places-banner">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="separator">/</span>
+        <span>Places & Experiences</span>
+      </div>
+      <h1>Must Visit Places in Fort Kochi</h1>
+      <p>Where history, color, colonial architecture, and centuries of maritime culture meet.</p>
+    </div>
+  </section>
+
+  <main id="places-page">
+    <!-- Top Experiences in Kochi Section -->
+    <section class="experiences-section section section-alt" id="experiences">
+      <div class="container experiences-container">
+        <div class="section-header reveal">
+          <p class="section-label">Discover</p>
+          <h2 class="section-title">Top Experiences in Kochi</h2>
+          <div class="divider"></div>
+        </div>
+
+        <div class="experiences-grid">
+          <!-- Item 1 -->
+          <div class="exp-card reveal reveal-up">
+            <div class="exp-img-wrapper">
+              <img src="assets/images/chinese_fishing_nets.png" alt="Chinese Fishing Nets" loading="lazy">
+            </div>
+            <div class="exp-info">
+              <h3>Chinese Fishing Nets</h3>
+              <p>Witness the iconic fishing nets that define Kochi's waterfront.</p>
+            </div>
+          </div>
+          <!-- Item 2 -->
+          <div class="exp-card reveal reveal-up">
+            <div class="exp-img-wrapper">
+              <img src="assets/images/fort_kochi_walk.png" alt="Fort Kochi Walk" loading="lazy">
+            </div>
+            <div class="exp-info">
+              <h3>Fort Kochi Walk</h3>
+              <p>Stroll through colonial streets filled with charm and stories.</p>
+            </div>
+          </div>
+          <!-- Item 3 -->
+          <div class="exp-card reveal reveal-up">
+            <div class="exp-img-wrapper">
+              <img src="assets/images/leaning_cross_church.png" alt="Leaning Cross Church" loading="lazy">
+            </div>
+            <div class="exp-info">
+              <h3>Leaning Cross Church</h3>
+              <p>This is one of the most significant events in Kerala's Christian history.</p>
+            </div>
+          </div>
+          <!-- Item 4 -->
+          <div class="exp-card reveal reveal-up">
+            <div class="exp-img-wrapper">
+              <img src="assets/images/backwater_cruises.png" alt="Backwater Cruises" loading="lazy">
+            </div>
+            <div class="exp-info">
+              <h3>Backwater Cruises</h3>
+              <p>Sail through serene backwaters and lush greenery.</p>
+            </div>
+          </div>
+          <!-- Item 5 -->
+          <div class="exp-card reveal reveal-up">
+            <div class="exp-img-wrapper">
+              <img src="assets/images/kathakali.png" alt="Cultural Performances" loading="lazy">
+            </div>
+            <div class="exp-info">
+              <h3>Cultural Performances</h3>
+              <p>Experience traditional art, dance and vibrant festivals.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Places section -->
+    <section id="places" class="section">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="section-label">Must Visit Places</p>
+          <h2>Explore Historic Fort Kochi Attractions</h2>
+        </div>
+
+        <div class="places-grid">
+          <article class="place-card reveal reveal-up">
+            <img src="assets/Chinees_Net.jpg?auto=format&fit=crop&w=800&q=80" alt="Chinese Fishing Nets"
+              loading="lazy" />
+            <div class="place-content">
+              <h3>Chinese Fishing Nets</h3>
+              <p>The massive, cantilevered wooden structures with fine nets dipped into the calm water are illuminated
+                by the warm, golden light of early evening. Local fishermen are managing the ropes and nets.</p>
+            </div>
+          </article>
+          <article class="place-card reveal reveal-up">
+            <img src="assets/Francis_Church.jpg?auto=format&fit=crop&w=800&q=80" alt="St Francis Church"
+              loading="lazy" />
+            <div class="place-content">
+              <h3>St Francis Church</h3>
+              <p>The whitewashed, colonial-era church, with its distinctive Dutch-influenced facade and two bell towers,
+                stands prominently. Its architecture reflects its long history as the oldest European-built church in India (1503).</p>
+            </div>
+          </article>
+          <article class="place-card reveal reveal-up">
+            <img src="assets/Santa_Cruz.jpg?auto=format&fit=crop&w=800&q=80" alt="Santa Cruz Basilica" loading="lazy" />
+            <div class="place-content">
+              <h3>Santa Cruz Basilica</h3>
+              <p>The Santa Cruz Cathedral Basilica in Fort Kochi is one of the oldest and most heritage-rich churches in
+                Kerala. Known for its striking Indo-Gothic architecture, it is famous for its historical frescoes and murals.</p>
+            </div>
+          </article>
+          <article class="place-card reveal reveal-up">
+            <img src="assets/Mattancherry_Palace.jpg?auto=format&fit=crop&w=800&q=80" alt="Mattancherry Palace"
+              loading="lazy" />
+            <div class="place-content">
+              <h3>Mattancherry Palace</h3>
+              <p>Built by the Portuguese in 1555 and later renovated by the Dutch, the Mattancherry Palace (Dutch Palace)
+                features a stunning collection of murals depicting scenes from Hindu epics, royal portraits, and artifacts.</p>
+            </div>
+          </article>
+          <article class="place-card reveal reveal-up">
+            <img src="assets/Jew_Town.jpg?auto=format&fit=crop&w=800&q=80" alt="Jew Town" loading="lazy" />
+            <div class="place-content">
+              <h3>Jew Town</h3>
+              <p>A bustling narrow street in Mattancherry, known for its antique shops, spice markets, and historical
+                buildings, including the Paradesi Synagogue with its distinct clock tower.</p>
+            </div>
+          </article>
+          <article class="place-card reveal reveal-up">
+            <img src="assets/Paradesi_Synagogue.jpg?auto=format&fit=crop&w=800&q=80" alt="Paradesi Synagogue"
+              loading="lazy" />
+            <div class="place-content">
+              <h3>Paradesi Synagogue</h3>
+              <p>The Paradesi Synagogue in Jew Town is the oldest active synagogue in the Commonwealth of Nations. Renowned
+                for hand-painted Chinese porcelain tiles and Belgian chandeliers.</p>
+            </div>
+          </article>
+          <article class="place-card reveal reveal-up">
+            <img src="assets/Dutch_Cemetery.jpg?auto=format&fit=crop&w=800&q=80" alt="Dutch Cemetery" loading="lazy" />
+            <div class="place-content">
+              <h3>Dutch Cemetery</h3>
+              <p>The Dutch Cemetery in Fort Kochi, established in 1724, is one of the oldest European cemeteries in
+                India, serving as a historical record of Dutch and European traders.</p>
+            </div>
+          </article>
+          <article class="place-card reveal reveal-up">
+            <img src="assets/Spice_Market.jpg?auto=format&fit=crop&w=800&q=80" alt="Spice Market" loading="lazy" />
+            <div class="place-content">
+              <h3>Spice Market</h3>
+              <p>The Mattancherry Spice Market is a vibrant and aromatic hub of global commerce and heritage, trading black
+                pepper, cardamom, cinnamon, cloves, and ginger for centuries.</p>
+            </div>
+          </article>
+          <article class="place-card reveal reveal-up">
+            <img src="assets/Dhobi_Khana.jpg?auto=format&fit=crop&w=800&q=80" alt="Dhobi Khana" loading="lazy" />
+            <div class="place-content">
+              <h3>Dhobhi Khana (traditional laundry)</h3>
+              <p>A Dhobi Khana is a traditional communal laundry collective of self-employed laundry workers. The most
+                prominent example is located at Veli in Fort Kochi, Kerala.</p>
+            </div>
+          </article>
+          <article class="place-card reveal reveal-up">
+            <img src="assets/Fort_Kochi_Beach.jpg?auto=format&fit=crop&w=800&q=80" alt="Fort Kochi Beach"
+              loading="lazy" />
+            <div class="place-content">
+              <h3>Fort Kochi Beach</h3>
+              <p>Fort Kochi Beach is a tranquil, historic shoreline along the Arabian Sea, known for its unique blend of
+                colonial history, coastal greenery, and scenic sunset views.</p>
+            </div>
+          </article>
+          <article class="place-card reveal reveal-up">
+            <img src="assets/Chai.jpg?auto=format&fit=crop&w=800&q=80" alt="Local chai and street-life experience"
+              loading="lazy" />
+            <div class="place-content">
+              <h3>Local Chai & Street-Life Experience</h3>
+              <p>Experience the vibrant street life of Fort Kochi with a refreshing cup of local chai, witnessing the
+                daily rhythms and cultural nuances of this historic district.</p>
+            </div>
+          </article>
+          <article class="place-card reveal reveal-up">
+            <img src="assets/Vasco_Gama_ Square.jpg?auto=format&fit=crop&w=800&q=80" alt="Vasco da Gama Square"
+              loading="lazy" />
+            <div class="place-content">
+              <h3>Vasco da Gama Square</h3>
+              <p>Vasco da Gama Square is the heart of Fort Kochi, where you can experience lively street food stalls,
+                local art, and gentle ocean breezes.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- History & Culture Timeline Section -->
+    <section class="timeline-section section section-alt" id="timeline">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-subtitle">Kerala Heritage</span>
+          <h2 class="section-title">History & Culture Timeline</h2>
+          <div class="divider"></div>
+        </div>
+
+        <div class="timeline-container">
+          <!-- Milestone 1 -->
+          <div class="timeline-item reveal reveal-left">
+            <div class="timeline-marker">1</div>
+            <div class="timeline-content">
+              <span class="timeline-date">Spice Route Era</span>
+              <h3>Kerala Spice Trade</h3>
+              <p>For thousands of years, Kerala's coast traded black gold pepper and cardamom with Phoenicians, Egyptians,
+                Romans, and Arabs, shaping global history.</p>
+            </div>
+          </div>
+
+          <!-- Milestone 2 -->
+          <div class="timeline-item reveal reveal-right">
+            <div class="timeline-marker">2</div>
+            <div class="timeline-content">
+              <span class="timeline-date">Colonial Arrivals (1503)</span>
+              <h3>Portuguese & Fort Kochi History</h3>
+              <p>Vasco da Gama arrived, marking the start of European influence. The Portuguese built Fort Emmanuel and St.
+                Francis Church, the oldest European church in India.</p>
+            </div>
+          </div>
+
+          <!-- Milestone 3 -->
+          <div class="timeline-item reveal reveal-left">
+            <div class="timeline-marker">3</div>
+            <div class="timeline-content">
+              <span class="timeline-date">Royal Splendor (1555)</span>
+              <h3>Mattancherry Palace & Jew Town</h3>
+              <p>Built by the Portuguese as a gift to the King of Kochi, then upgraded by the Dutch (Dutch Palace). Jew Town
+                thrived as a sanctuary for Jewish spice merchants.</p>
+            </div>
+          </div>
+
+          <!-- Milestone 4 -->
+          <div class="timeline-item reveal reveal-right">
+            <div class="timeline-marker">4</div>
+            <div class="timeline-content">
+              <span class="timeline-date">Colonial Transitions (1663 - 1795)</span>
+              <h3>Dutch & British Influence</h3>
+              <p>The Dutch seized Kochi, turning it into a trading hub, followed by the British in 1795. This rich blend of
+                styles gave Kochi its colonial architectural charm.</p>
+            </div>
+          </div>
+
+          <!-- Milestone 5 -->
+          <div class="timeline-item reveal reveal-left">
+            <div class="timeline-marker">5</div>
+            <div class="timeline-content">
+              <span class="timeline-date">Living Art Forms</span>
+              <h3>Traditional Arts: Kathakali & Theyyam</h3>
+              <p>Marvel at Kathakali's heavy makeup and dramatic hand gestures, or witness the ritualistic trance dance of
+                Theyyam in North Kerala temple groves.</p>
+            </div>
+          </div>
+
+          <!-- Milestone 6 -->
+          <div class="timeline-item reveal reveal-right">
+            <div class="timeline-marker">6</div>
+            <div class="timeline-content">
+              <span class="timeline-date">Traditional Backwater Life</span>
+              <h3>Backwater & Houseboat Heritage</h3>
+              <p>Discover the ancient Kettuvallams—traditional wooden boats originally built to transport rice and spices,
+                now converted into luxury floating houses.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Booking Call to Action -->
+    <section class="section booking-section">
+      <div class="container">
+        <div class="booking-card reveal">
+          <div class="booking-content">
+            <div class="booking-copy">
+              <span class="booking-badge"><i class="fa-solid fa-compass"></i> Explore With Safeer</span>
+              <h2 class="booking-title">Want to Visit These Places With a Local Guide?</h2>
+              <p class="booking-desc">
+                Book a personalized Tuk-Tuk or Walking Heritage Tour to explore all these attractions smoothly without missing any hidden gems.
+              </p>
+              <div class="booking-actions">
+                <a href="https://wa.me/917558807741" class="btn btn-primary btn-lg" target="_blank" rel="noreferrer">
+                  <i class="fa-brands fa-whatsapp"></i> Book Tour on WhatsApp
+                </a>
+                <a href="contact.html" class="btn btn-secondary btn-lg">
+                  <i class="fa-solid fa-map-location-dot"></i> View Tour Map
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-brand-block">
+        <div class="brand footer-brand">
+          <img src="assets/logo.png" alt="DE FORT KOCHI logo" />
+          <span>DE FORT KOCHI</span>
+        </div>
+        <p class="footer-tagline">Authentic Heritage & Customized Local Tours in Fort Kochi, Kerala.</p>
+      </div>
+
+      <div class="footer-social-block">
+        <h4 class="footer-social-heading">Follow the journey</h4>
+        <div class="social-icon-badges">
+          <a href="https://facebook.com" target="_blank" rel="noreferrer" class="social-badge facebook"
+            aria-label="Facebook">
+            <i class="fa-brands fa-facebook-f"></i>
+            <span>Facebook</span>
+          </a>
+          <a href="https://instagram.com" target="_blank" rel="noreferrer" class="social-badge instagram"
+            aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+            <span>Instagram</span>
+          </a>
+          <a href="https://youtube.com" target="_blank" rel="noreferrer" class="social-badge youtube"
+            aria-label="YouTube">
+            <i class="fa-brands fa-youtube"></i>
+            <span>YouTube</span>
+          </a>
+          <a href="https://wa.me/917558807741" target="_blank" rel="noreferrer" class="social-badge whatsapp"
+            aria-label="WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span>WhatsApp</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>© 2026 DE FORT KOCHI. Designed with ❤️ for travelers.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

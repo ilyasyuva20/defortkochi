@@ -10,7 +10,6 @@ const cursorDot = document.querySelector('.cursor-dot');
 const cursorRing = document.querySelector('.cursor-ring');
 const revealItems = document.querySelectorAll('.reveal');
 const counterItems = document.querySelectorAll('.counter-card strong');
-const testimonialCards = Array.from(document.querySelectorAll('.testimonial-card'));
 const galleryItems = Array.from(document.querySelectorAll('.gallery-item img'));
 const modal = document.querySelector('.modal');
 const modalImage = document.querySelector('.modal img');
@@ -36,16 +35,19 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
   link.addEventListener('click', (event) => {
     const href = link.getAttribute('href');
     if (href && href !== '#') {
-      event.preventDefault();
-      smoothScrollTo(href);
-      if (navMenu?.classList.contains('open')) {
-        navMenu.classList.remove('open');
+      const target = document.querySelector(href);
+      if (target) {
+        event.preventDefault();
+        smoothScrollTo(href);
+        if (navMenu?.classList.contains('open')) {
+          navMenu.classList.remove('open');
+        }
       }
     }
   });
 });
 
-// Mobile menu
+// Mobile menu toggle
 menuToggle?.addEventListener('click', () => {
   const isOpen = navMenu?.classList.toggle('open');
   menuToggle.setAttribute('aria-expanded', String(isOpen));
@@ -53,8 +55,20 @@ menuToggle?.addEventListener('click', () => {
 
 // Navbar background on scroll + active link highlight
 const setActiveLink = () => {
-  const scrollY = window.scrollY + 140;
+  const currentPath = window.location.pathname.split('/').pop() || 'index.html';
 
+  navLinks.forEach((link) => {
+    const href = link.getAttribute('href');
+    if (!href) return;
+
+    if (href === currentPath || (currentPath === '' && href === 'index.html')) {
+      link.classList.add('active');
+    } else if (!href.startsWith('#') && !href.startsWith('http')) {
+      link.classList.remove('active');
+    }
+  });
+
+  const scrollY = window.scrollY + 140;
   document.querySelectorAll('section[id]').forEach((section) => {
     const id = section.getAttribute('id');
     const link = document.querySelector(`.nav-links a[href="#${id}"]`);
@@ -70,7 +84,9 @@ const setActiveLink = () => {
 window.addEventListener('scroll', () => {
   const scrollTop = window.scrollY;
   header?.classList.toggle('scrolled', scrollTop > 20);
-  progressBar.style.width = `${(scrollTop / (document.body.scrollHeight - window.innerHeight)) * 100}%`;
+  if (progressBar) {
+    progressBar.style.width = `${(scrollTop / (document.body.scrollHeight - window.innerHeight)) * 100}%`;
+  }
   backToTop?.classList.toggle('visible', scrollTop > 600);
   setActiveLink();
 });
@@ -78,19 +94,21 @@ window.addEventListener('scroll', () => {
 setActiveLink();
 
 // Scroll reveal using IntersectionObserver
-const revealObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  },
-  { threshold: 0.15 }
-);
+if (revealItems.length > 0) {
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15 }
+  );
 
-revealItems.forEach((item) => revealObserver.observe(item));
+  revealItems.forEach((item) => revealObserver.observe(item));
+}
 
 // Animated counters
 const animateCounter = (element) => {
@@ -113,19 +131,21 @@ const animateCounter = (element) => {
   requestAnimationFrame(tick);
 };
 
-const counterObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        animateCounter(entry.target);
-        counterObserver.unobserve(entry.target);
-      }
-    });
-  },
-  { threshold: 0.7 }
-);
+if (counterItems.length > 0) {
+  const counterObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target);
+          counterObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.7 }
+  );
 
-counterItems.forEach((item) => counterObserver.observe(item));
+  counterItems.forEach((item) => counterObserver.observe(item));
+}
 
 // Swiper initialization for Google Reviews Slider
 if (typeof Swiper !== 'undefined' && document.querySelector('.reviews-slider')) {
@@ -159,94 +179,102 @@ if (typeof Swiper !== 'undefined' && document.querySelector('.reviews-slider')) 
 }
 
 // Gallery lightbox
-galleryItems.forEach((image) => {
-  image.addEventListener('click', () => {
-    modalImage.src = image.src;
-    modal.classList.add('open');
-    modal.setAttribute('aria-hidden', 'false');
+if (galleryItems.length > 0 && modal && modalImage) {
+  galleryItems.forEach((image) => {
+    image.addEventListener('click', () => {
+      modalImage.src = image.src;
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden', 'false');
+    });
   });
-});
 
-modalClose?.addEventListener('click', () => {
-  modal.classList.remove('open');
-  modal.setAttribute('aria-hidden', 'true');
-});
-
-modal?.addEventListener('click', (event) => {
-  if (event.target === modal) {
+  modalClose?.addEventListener('click', () => {
     modal.classList.remove('open');
     modal.setAttribute('aria-hidden', 'true');
-  }
-});
+  });
+
+  modal?.addEventListener('click', (event) => {
+    if (event.target === modal) {
+      modal.classList.remove('open');
+      modal.setAttribute('aria-hidden', 'true');
+    }
+  });
+}
 
 // Typing effect for hero subtitle
-const heroPhrases = [
-  'Authentic walking tours with local experts.',
-  'Premium tuk-tuk experiences through heritage streets.',
-  'Stories, secret corners, and unforgettable memories.'
-];
+if (heroSubtitle) {
+  const heroPhrases = [
+    'Authentic walking tours with local experts.',
+    'Premium tuk-tuk experiences through heritage streets.',
+    'Stories, secret corners, and unforgettable memories.'
+  ];
 
-let phraseIndex = 0;
-let letterIndex = 0;
-let isDeleting = false;
+  let phraseIndex = 0;
+  let letterIndex = 0;
+  let isDeleting = false;
 
-const typeEffect = () => {
-  const currentPhrase = heroPhrases[phraseIndex];
-  heroSubtitle.textContent = currentPhrase.slice(0, letterIndex);
+  const typeEffect = () => {
+    const currentPhrase = heroPhrases[phraseIndex];
+    heroSubtitle.textContent = currentPhrase.slice(0, letterIndex);
 
-  if (!isDeleting && letterIndex < currentPhrase.length) {
-    letterIndex += 1;
-    setTimeout(typeEffect, 70);
-  } else if (isDeleting && letterIndex > 0) {
-    letterIndex -= 1;
-    setTimeout(typeEffect, 40);
-  } else {
-    isDeleting = !isDeleting;
-    if (!isDeleting) {
-      phraseIndex = (phraseIndex + 1) % heroPhrases.length;
+    if (!isDeleting && letterIndex < currentPhrase.length) {
+      letterIndex += 1;
+      setTimeout(typeEffect, 70);
+    } else if (isDeleting && letterIndex > 0) {
+      letterIndex -= 1;
+      setTimeout(typeEffect, 40);
+    } else {
+      isDeleting = !isDeleting;
+      if (!isDeleting) {
+        phraseIndex = (phraseIndex + 1) % heroPhrases.length;
+      }
+      setTimeout(typeEffect, 1000);
     }
-    setTimeout(typeEffect, 1000);
-  }
-};
+  };
 
-typeEffect();
+  typeEffect();
+}
 
 // Mouse parallax on hero card
 const heroSection = document.querySelector('.hero');
 const heroCard = document.querySelector('.hero-card');
 const heroCopy = document.querySelector('.hero-copy');
 
-heroSection?.addEventListener('mousemove', (event) => {
-  const { width, height, left, top } = heroSection.getBoundingClientRect();
-  const x = (event.clientX - left) / width - 0.5;
-  const y = (event.clientY - top) / height - 0.5;
+if (heroSection && heroCard && heroCopy) {
+  heroSection.addEventListener('mousemove', (event) => {
+    const { width, height, left, top } = heroSection.getBoundingClientRect();
+    const x = (event.clientX - left) / width - 0.5;
+    const y = (event.clientY - top) / height - 0.5;
 
-  heroCard.style.transform = `perspective(800px) rotateY(${x * 6}deg) rotateX(${-y * 6}deg)`;
-  heroCopy.style.transform = `translate3d(${x * 10}px, ${y * 10}px, 0)`;
-});
+    heroCard.style.transform = `perspective(800px) rotateY(${x * 6}deg) rotateX(${-y * 6}deg)`;
+    heroCopy.style.transform = `translate3d(${x * 10}px, ${y * 10}px, 0)`;
+  });
 
-heroSection?.addEventListener('mouseleave', () => {
-  heroCard.style.transform = 'perspective(800px) rotateY(0) rotateX(0)';
-  heroCopy.style.transform = 'translate3d(0, 0, 0)';
-});
+  heroSection.addEventListener('mouseleave', () => {
+    heroCard.style.transform = 'perspective(800px) rotateY(0) rotateX(0)';
+    heroCopy.style.transform = 'translate3d(0, 0, 0)';
+  });
+}
 
 // Lazy loading images
 const lazyImages = document.querySelectorAll('img[data-src]');
-const imageObserver = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      const img = entry.target;
-      img.setAttribute('src', img.getAttribute('data-src'));
-      img.removeAttribute('data-src');
-      imageObserver.unobserve(img);
-    }
+if (lazyImages.length > 0) {
+  const imageObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const img = entry.target;
+        img.setAttribute('src', img.getAttribute('data-src'));
+        img.removeAttribute('data-src');
+        imageObserver.unobserve(img);
+      }
+    });
   });
-});
 
-lazyImages.forEach((img) => imageObserver.observe(img));
+  lazyImages.forEach((img) => imageObserver.observe(img));
+}
 
-// Small interactive hover effect for cards
-document.querySelectorAll('.package-card, .place-card, .feature-card').forEach((card) => {
+// Card hover animation
+document.querySelectorAll('.package-card, .place-card, .feature-card, .nav-hub-card').forEach((card) => {
   card.addEventListener('mouseenter', () => {
     card.style.transform = 'translateY(-8px)';
   });
@@ -258,22 +286,24 @@ backToTop?.addEventListener('click', () => {
 });
 
 // Custom cursor movement
-window.addEventListener('mousemove', (event) => {
-  cursorDot.style.left = `${event.clientX}px`;
-  cursorDot.style.top = `${event.clientY}px`;
-  cursorRing.style.left = `${event.clientX}px`;
-  cursorRing.style.top = `${event.clientY}px`;
-});
+if (cursorDot && cursorRing) {
+  window.addEventListener('mousemove', (event) => {
+    cursorDot.style.left = `${event.clientX}px`;
+    cursorDot.style.top = `${event.clientY}px`;
+    cursorRing.style.left = `${event.clientX}px`;
+    cursorRing.style.top = `${event.clientY}px`;
+  });
 
-window.addEventListener('mousedown', () => {
-  cursorRing.style.width = '24px';
-  cursorRing.style.height = '24px';
-});
+  window.addEventListener('mousedown', () => {
+    cursorRing.style.width = '24px';
+    cursorRing.style.height = '24px';
+  });
 
-window.addEventListener('mouseup', () => {
-  cursorRing.style.width = '36px';
-  cursorRing.style.height = '36px';
-});
+  window.addEventListener('mouseup', () => {
+    cursorRing.style.width = '36px';
+    cursorRing.style.height = '36px';
+  });
+}
 
 // FAQ Accordion Interactivity
 document.querySelectorAll('.accordion-header').forEach((headerBtn) => {
@@ -281,12 +311,10 @@ document.querySelectorAll('.accordion-header').forEach((headerBtn) => {
     const currentItem = headerBtn.closest('.accordion-item');
     const isActive = currentItem.classList.contains('active');
 
-    // Close all other accordion items for clean single accordion view
     document.querySelectorAll('.accordion-item').forEach((item) => {
       item.classList.remove('active');
     });
 
-    // Toggle current item if it was not already active
     if (!isActive) {
       currentItem.classList.add('active');
     }
