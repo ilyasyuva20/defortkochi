@@ -473,6 +473,43 @@ a {
   box-shadow: 0 4px 15px rgba(122, 28, 28, 0.05);
 }
 
+.btn-whatsapp {
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%) !important;
+  color: #FFFFFF !important;
+  border: none !important;
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35);
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  transition: all 0.3s ease;
+}
+
+.btn-whatsapp:hover {
+  background: linear-gradient(135deg, #20BD5A 0%, #0E776A 100%) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.45);
+  color: #FFFFFF !important;
+}
+
+.hero-trust-bar {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  font-size: 0.88rem;
+  color: var(--text-main);
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(192, 153, 83, 0.35);
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  box-shadow: 0 4px 14px rgba(122, 28, 28, 0.06);
+}
+
+.hero-trust-bar strong {
+  color: var(--primary);
+}
+
 .hero-card {
   padding: 1.5rem;
   border-radius: var(--radius);
