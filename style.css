@@ -298,25 +298,25 @@ a {
   color: var(--primary);
   font-weight: 700;
   letter-spacing: 0.08em;
-  font-size: 0.98rem;
+  font-size: 1.05rem;
 }
 
 .brand img {
-  height: 58px;
+  height: 60px;
   width: auto;
-  max-width: 200px;
+  max-width: 220px;
   object-fit: contain;
-  border-radius: 10px;
+  border-radius: 12px;
   background: #FFFFFF;
-  padding: 4px 8px;
+  padding: 5px 10px;
   border: 1px solid rgba(192, 153, 83, 0.35);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 18px rgba(122, 28, 28, 0.08);
   transition: all 0.3s ease;
 }
 
 .site-header.scrolled .brand img {
-  height: 48px;
-  padding: 3px 6px;
+  height: 50px;
+  padding: 4px 8px;
 }
 
 .nav-links {
@@ -481,36 +481,91 @@ a {
   color: var(--text-main);
 }
 
-.hero-card-top {
+.hero-image-card {
+  padding: 0.85rem;
+  border-radius: 24px;
+  background: #FFFFFF;
+  border: 1px solid rgba(192, 153, 83, 0.4);
+  box-shadow: 0 16px 40px rgba(122, 28, 28, 0.12);
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.hero-image-frame {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  aspect-ratio: 1 / 1;
+}
+
+.hero-vibrant-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.hero-image-card:hover .hero-vibrant-img {
+  transform: scale(1.04);
+}
+
+.hero-image-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  right: 12px;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(12px);
+  padding: 0.75rem 0.95rem;
+  border-radius: 14px;
+  border: 1px solid rgba(192, 153, 83, 0.4);
+  display: flex;
   align-items: center;
-  margin-bottom: 1rem;
+  gap: 0.75rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
 }
 
-.hero-card-top p {
-  font-weight: 700;
+.hero-image-badge .badge-icon {
+  font-size: 1.4rem;
+}
+
+.hero-image-badge .badge-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-image-badge .badge-text strong {
+  font-size: 0.95rem;
   color: var(--primary);
+  font-weight: 700;
 }
 
-.hero-card-top span {
+.hero-image-badge .badge-text small {
+  font-size: 0.8rem;
   color: var(--gold);
-  font-size: 0.9rem;
   font-weight: 600;
 }
 
-.hero-card ul {
+.hero-card-features {
   list-style: none;
-  display: grid;
-  gap: 0.8rem;
-  color: var(--text-muted);
+  padding: 0.4rem 0.6rem;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-.hero-card li::before {
-  content: '•';
-  color: var(--primary);
-  margin-right: 0.5rem;
-  font-weight: bold;
+.hero-card-features li {
+  font-size: 0.9rem;
+  color: var(--text-main);
+  font-weight: 500;
+  line-height: 1.45;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
 }
 
 .scroll-indicator {

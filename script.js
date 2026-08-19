@@ -201,38 +201,9 @@ if (galleryItems.length > 0 && modal && modalImage) {
   });
 }
 
-// Typing effect for hero subtitle
+// Typing effect for hero subtitle - Disabled typewriter animation for clean static text
 if (heroSubtitle) {
-  const heroPhrases = [
-    'Authentic walking tours with local experts.',
-    'Premium tuk-tuk experiences through heritage streets.',
-    'Stories, secret corners, and unforgettable memories.'
-  ];
-
-  let phraseIndex = 0;
-  let letterIndex = 0;
-  let isDeleting = false;
-
-  const typeEffect = () => {
-    const currentPhrase = heroPhrases[phraseIndex];
-    heroSubtitle.textContent = currentPhrase.slice(0, letterIndex);
-
-    if (!isDeleting && letterIndex < currentPhrase.length) {
-      letterIndex += 1;
-      setTimeout(typeEffect, 70);
-    } else if (isDeleting && letterIndex > 0) {
-      letterIndex -= 1;
-      setTimeout(typeEffect, 40);
-    } else {
-      isDeleting = !isDeleting;
-      if (!isDeleting) {
-        phraseIndex = (phraseIndex + 1) % heroPhrases.length;
-      }
-      setTimeout(typeEffect, 1000);
-    }
-  };
-
-  typeEffect();
+  heroSubtitle.textContent = 'Discover historic colonial streets, Chinese fishing nets, and authentic local experiences with expert guides.';
 }
 
 // Mouse parallax on hero card
